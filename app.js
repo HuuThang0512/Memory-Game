@@ -14,26 +14,26 @@ const cardsArray = [
         name: "flash",
         img: "img/flash.png"
     },
-    // {
-    //     name: "gift",
-    //     img: "img/gift.png"
-    // },
-    // {
-    //     name: "plant",
-    //     img: "img/plant.png"
-    // },
-    // {
-    //     name: "tron",
-    //     img: "img/tron.png"
-    // },
-    // {
-    //     name: "ufo",
-    //     img: "img/ufo.png"
-    // },
-    // {
-    //     name: "youtube",
-    //     img: "img/youtube.png"
-    // },
+    {
+        name: "gift",
+        img: "img/gift.png"
+    },
+    {
+        name: "plant",
+        img: "img/plant.png"
+    },
+    {
+        name: "tron",
+        img: "img/tron.png"
+    },
+    {
+        name: "ufo",
+        img: "img/ufo.png"
+    },
+    {
+        name: "youtube",
+        img: "img/youtube.png"
+    },
 ]
 
 const grid = $(".grid")
