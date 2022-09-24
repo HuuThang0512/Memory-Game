@@ -1,6 +1,6 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
-const delayTimeOut = 1000
+const delayTimeOut = 600
 const cardsArray = [
     {
         name: "burger",
@@ -14,26 +14,26 @@ const cardsArray = [
         name: "flash",
         img: "img/flash.png"
     },
-    {
-        name: "gift",
-        img: "img/gift.png"
-    },
-    {
-        name: "plant",
-        img: "img/plant.png"
-    },
-    {
-        name: "tron",
-        img: "img/tron.png"
-    },
-    {
-        name: "ufo",
-        img: "img/ufo.png"
-    },
-    {
-        name: "youtube",
-        img: "img/youtube.png"
-    },
+    // {
+    //     name: "gift",
+    //     img: "img/gift.png"
+    // },
+    // {
+    //     name: "plant",
+    //     img: "img/plant.png"
+    // },
+    // {
+    //     name: "tron",
+    //     img: "img/tron.png"
+    // },
+    // {
+    //     name: "ufo",
+    //     img: "img/ufo.png"
+    // },
+    // {
+    //     name: "youtube",
+    //     img: "img/youtube.png"
+    // },
 ]
 
 const grid = $(".grid")
@@ -65,7 +65,7 @@ function matchingCard(name) {
     const matchedCards = $$('.matched')
     const cardsLength = $$('.card').length
     if(matchedCards.length == cardsLength) {
-        setTimeout(renderCards, delayTimeOut/2)
+        setTimeout(renderCards, delayTimeOut*2)
     }
 }
 let count = 0;
@@ -81,15 +81,15 @@ function resetClicked() {
     [...selectedCards].forEach((card) => {
         card.classList.remove('selected')
     })
+    setTimeout(() => {grid.classList.remove('no-click')},delayTimeOut+50)
 }
 grid.addEventListener('click', (e) => {
     const clicked = e.target
-    // console.log();
     if(clicked.nodeName === 'SECTION' 
-    || clicked.parentNode === previousClicked 
-    || !clicked.parentNode.classList.contains('card')
-    || clicked.parentNode.classList.contains('matched')) {
-        return;
+        || clicked.parentNode === previousClicked 
+        || !clicked.parentNode.classList.contains('card')
+        || clicked.parentNode.classList.contains('matched')) {
+            return;
     }
 
     if(count < 2) {
@@ -100,11 +100,13 @@ grid.addEventListener('click', (e) => {
         } else {
             if(clicked.parentNode !== previousClicked) {
                 secondCard = clicked.parentNode.dataset.name
+                grid.classList.add('no-click')
             } else {
                 count--
             }
         }
     }
+    
     previousClicked = clicked.parentNode
     if(firstCard && secondCard) {
         if(firstCard === secondCard) {

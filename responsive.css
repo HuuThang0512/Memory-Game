@@ -1,0 +1,8 @@
+@media (max-width: 46.25em) {
+    .card,
+    .front,
+    .back {
+        height: 80px;
+        width: 80px;
+    }
+}
