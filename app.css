@@ -7,6 +7,7 @@
 body {
   margin: 20px 0;
   background: #6589f9;
+  background: #8bbcdb;
 }
 .grid {
   max-width: 660px;
@@ -85,4 +86,5 @@ body {
 
 .matched .front {
   background: #6589f9 !important;
+  background: #8bbcdb !important;
 }
