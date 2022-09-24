@@ -81,7 +81,7 @@ function resetClicked() {
     [...selectedCards].forEach((card) => {
         card.classList.remove('selected')
     })
-    setTimeout(() => {grid.classList.remove('no-click')},delayTimeOut+50)
+    setTimeout(() => {grid.classList.remove('no-click')},delayTimeOut)
 }
 grid.addEventListener('click', (e) => {
     const clicked = e.target
